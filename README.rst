@@ -123,4 +123,17 @@ This project will help you install a `TurnKey PostgreSQL <http://www.turnkeylinu
 
 	* openuser (PostgreSQL)
 
+#. Add Allowed Host for openuser
+
+	Create manually, using Webmin, PostgreSQL Database Server, Allowed Hosts:
+
+	::
+
+		Allowed Host:
+
+		<VPC Network> (172.31.0.0/16)
+		All databases
+		openuser
+		MD5 encrypted password
+
 #. `PuTTY for SSH Tunneling to PostgreSQL Server <http://www.postgresonline.com/journal/archives/38-PuTTY-for-SSH-Tunneling-to-PostgreSQL-Server.html>`_:
