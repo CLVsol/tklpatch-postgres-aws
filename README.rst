@@ -37,6 +37,7 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
 
     * root (Linux)
     * postgres (PostgreSQL)
+    * root (PostgreSQL)
 
     Note: For the first login use the randon password created during the server launching. This randon password can be found in the System Log File.
 
@@ -100,7 +101,7 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
 
     The documentation is installed at "/usr/share/tklpatch/docs" and the exemples at "/usr/share/tklpatch/docs".
 
-#. Get the TKLPatch script "**tklpatch-postgres-aws**" using the commands:
+#. Get the TKLPatch script "**clvsol_tklpatch-postgres-aws**" using the commands:
 
     ::
 
