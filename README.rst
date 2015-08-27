@@ -37,7 +37,6 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
 
     * root (Linux)
     * postgres (PostgreSQL)
-    * root (PostgreSQL)
 
     Note: For the first login use the randon password created during the server launching. This randon password can be found in the System Log File.
 
@@ -117,6 +116,7 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
 
 #. Change manually, using Webmin, the passwords for the accounts:
 
+    * root (PostgreSQL)
     * openuser (PostgreSQL)
 
 #. Add Allowed Host for openuser
