@@ -1,43 +1,38 @@
 tklpatch-postgres-aws
 =====================
 
-This project will help you install a `TurnKey PostgreSQL <http://www.turnkeylinux.org/postgresql>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
+This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turnkeylinux.org/postgresql>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
 
 #. Create a new Key Pair:
 
-	* Key pair name: **tkl-postgres-aws**
-	* Private Key File: **tkl-postgres-aws.pem**
+	* Key pair name: **tk-aws-postgres**
+	* Private Key File: **tk-aws-postgres.pem**
 
 #. Launch a new Amazon EC2 instance:
 
 	* Step 1: Choose an Amazon Machine Image (AMI) - Comnmunity AMIs: **turnkey-postgresql-13.0-wheezy-amd64.ebs_3 - ami-09b70d14**
-	* Step 2: Choose an Instance Type: **t1.micro**
+	* Step 2: Choose an Instance Type: (select)
 	* Step 3: Configure Instance Details: (leave dafaults)
 	* Step 4: Add Storage:
-		* Volume Type: **Magnetic**
+		* Volume Type: **General Posrpouse (SSD)**
 	* Step 5: Tag Instance: (leave dafaults)
 	* Step 6: Configure Security Group: 
-		* Security group name: **tkl-postgres-aws**
-		* Description: **Security Group for tkl-postgres-aws**
+		* Security group name: **tk-aws-postgres**
+		* Description: **Security Group for tk-aws-postgres**
+		* Security Group Rules: (Inbound)::
+
+			Port (Service)    Source
+			---------------------------------------
+			22(SSH)           0.0.0.0/0
+			80(HTTP)          0.0.0.0/0  (disable)
+			443(HTTPS)        0.0.0.0/0  (disable)
+	        5432(PostgreSQL) <VPC Network> (172.31.0.0/16)
+	        12320(Web Shell)  0.0.0.0/0  (disable)
+			12321(Webmin)     0.0.0.0/0  (disable)
+
 	* Launch the instance:
-		* Select a key pair: **tkl-postgres-aws**
+		* Select a key pair: **tk-aws-postgres**
 	
-	Related information:
-
-		* Security Groups: **tkl-postgres-aws**
-		* Private Key File: **tkl-postgres-aws.pem**
-
-	Security Group: tkl-postgres-aws (Inbound)::
-
-		Port (Service)    Source
-		---------------------------------------
-		22(SSH)           0.0.0.0/0
-		80(HTTP)          0.0.0.0/0
-		443(HTTPS)        0.0.0.0/0
-        5432(PostgreSQL) <VPC Network> (172.31.0.0/16)
-        12320(Web Shell)  0.0.0.0/0  (disable)
-		12321(Webmin)     0.0.0.0/0  (disable)
-
 #. Connect, via SSH, for the first time to the instance and set the passowrds:
 
 	* root (Linux)
@@ -67,7 +62,7 @@ This project will help you install a `TurnKey PostgreSQL <http://www.turnkeylinu
 
 	::
 
-		HOSTNAME=tkl-postgres-aws
+		HOSTNAME=tk-aws-postgres
 		echo "$HOSTNAME" > /etc/hostname
 		sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
 		/etc/init.d/hostname.sh start
@@ -105,7 +100,7 @@ This project will help you install a `TurnKey PostgreSQL <http://www.turnkeylinu
 
 	The documentation is installed at "/usr/share/tklpatch/docs" and the exemples at "/usr/share/tklpatch/docs".
 
-#. Get the TKLPatch script "**clvsol_tklpatch-odoo-aws**" using the commands:
+#. Get the TKLPatch script "**tklpatch-postgres-aws**" using the commands:
 
 	::
 
