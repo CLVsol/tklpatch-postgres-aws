@@ -33,7 +33,7 @@ This project will help you install a `TurnKey PostgreSQL (14.0) <http://www.turn
     * Launch the instance:
         * Select a key pair: **tk-aws-postgres**
     
-#. Connect, via SSH, for the first time to the instance and set the passowrds:
+#. Connect, via SSH, using the public/private key pair, for the first time to the instance and set the passowrds:
 
     * root (Linux)
     * postgres (PostgreSQL)
