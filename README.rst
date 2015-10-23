@@ -1,7 +1,7 @@
 tklpatch-postgres-aws
 =====================
 
-This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turnkeylinux.org/postgresql>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
+This project will help you install a `TurnKey PostgreSQL (14.0) <http://www.turnkeylinux.org/postgresql>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
 
 #. Create a new Key Pair:
 
@@ -10,7 +10,7 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
 
 #. Launch a new Amazon EC2 instance:
 
-    * Step 1: Choose an Amazon Machine Image (AMI) - Comnmunity AMIs: **turnkey-postgresql-13.0-wheezy-amd64.ebs_3 - ami-09b70d14**
+    * Step 1: Choose an Amazon Machine Image (AMI) - Comnmunity AMIs: **turnkey-postgresql-14.0-jessie-amd64.ebs_1441619077 - ami-9f109a82**
     * Step 2: Choose an Instance Type: (select)
     * Step 3: Configure Instance Details: (leave dafaults)
     * Step 4: Add Storage:
@@ -26,7 +26,7 @@ This project will help you install a `TurnKey PostgreSQL (13.0) <http://www.turn
             22(SSH)           0.0.0.0/0
             80(HTTP)          0.0.0.0/0  (disable)
             443(HTTPS)        0.0.0.0/0  (disable)
-            5432(PostgreSQL)  <VPC Network> (172.31.0.0/16)
+            5432(PostgreSQL)  <VPC Network> (172.31.0.0/16) (disable)
             12320(Web Shell)  0.0.0.0/0  (disable)
             12321(Webmin)     0.0.0.0/0  (disable)
 
